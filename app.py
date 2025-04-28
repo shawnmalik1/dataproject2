@@ -24,7 +24,7 @@ def find_local_player(player_name):
     """
     matches = player_data[player_data["player_name"].str.contains(player_name, case=False, na=False)]
     if matches.empty:
-        return "Couldn't find player in CSV file directory!"
+        return None
     return matches.iloc[0].to_dict()
 
 def find_api_player(player_name):
