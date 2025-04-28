@@ -10,7 +10,7 @@ In Terminal or Postman, run
 ```
 curl -X POST http://34.21.10.71:5001/chat \
      -H "Content-Type: application/json" \
-     -d '{"message":"LeBron James"}'
+     -d '{"message":"Stephen Curry"}'
 ```
 
 Our project uses an ETL Pipeline referning `player_data.csv` and the BallDontLie API.
