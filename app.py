@@ -53,7 +53,7 @@ def chat():
     Chatbot endpoint. Expects JSON {"message": "..."}
     """
     if request.method == "GET":
-        invite_link = "https://discord.com/oauth2/authorize?client_id=1367242289147023400"
+        invite_link = "https://discord.com/oauth2/authorize?client_id=1367242289147023400&permissions=2147690560&integration_type=0&scope=applications.commands+bot"
         return f"""
         <h1>POST to this endpoint (with a curl command in your Terminal).</h1>
         <p>You can also invite the Discord bot to your server: <a href="{invite_link}">Invite Bot</a></p>
