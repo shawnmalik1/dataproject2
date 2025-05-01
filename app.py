@@ -53,7 +53,12 @@ def chat():
     Chatbot endpoint. Expects JSON {"message": "..."}
     """
     if request.method == "GET":
-        return "<h1>POST JSON to this endpoint, e.g. {message: ...}</h1>"
+        invite_link = "https://discord.com/oauth2/authorize?client_id=1367242289147023400"
+        return f"""
+        <h1>POST to this endpoint (with a curl command in your Terminal).</h1>
+        <p>You can also invite the Discord bot to your server: <a href="{invite_link}">Invite Bot</a></p>
+        To use the bot, send a message like this: !player FirstName LastName"""
+    
     data = request.get_json()
     if not data or "message" not in data:
         return jsonify({"error": "Invalid request, expected JSON with 'message' field."}), 400
@@ -67,7 +72,7 @@ def chat():
 
     if player_info:
         response = (f"{player_info['player_name']} played {player_info['primary_position']} position. "
-                    f"They were {player_info['height_in']} inches tall, "
+                    f"He was {player_info['height_in']} inches tall, "
                     f"weighed {int(player_info['weight_lbs'])} lbs, "
                     f"and went to {player_info['college'] if pd.notna(player_info['college']) else 'unknown college'}.")
     else:
