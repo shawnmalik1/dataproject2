@@ -31,7 +31,7 @@ def generate_player_response(name):
     player = find_local_player(name)
     if player:
         return (f"{player['player_name']} played {player['primary_position']} position. "
-                f"They were {player['height_in']} inches tall, weighed {int(player['weight_lbs'])} lbs, "
+                f"He was {player['height_in']} inches tall, weighed {int(player['weight_lbs'])} lbs, "
                 f"and went to {player['college'] if pd.notna(player['college']) else 'unknown college'}.")
     else:
         api_player = find_api_player(name)
